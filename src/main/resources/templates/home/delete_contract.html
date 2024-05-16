@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Contract</title>
+    <link rel="stylesheet" type="text/css" href="path/to/your/css/delete_contract.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #f44336; /* Red */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d32f2f; /* Darker Red */
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+<h1>Delete Contract</h1>
+<form action="/delete_contract" method="post">
+    <p>Are you sure you want to delete the car with the following details?
+        <br>
+        <strong>Car ID:</strong> <span th:text="${id}"></span>
+        <br>
+        <strong>Contract ID:</strong> <span th:text="${contractId}"></span>
+        <br>
+        <strong>Car Model:</strong> <span th:text="${carId}"></span>
+    </p>
+
+    <form action="/delete_contract" method="post">
+        <input type="hidden" name="id" th:value="${id}">
+        <input type="hidden" name="contractId" th:value="${contractId}">
+        <input type="hidden" name="carId" th:value="${carId}">
+
+    </form>
+    <!-- Submit button -->
+    <input type="submit" value="Delete Contract"><br><br>
+
+    <!-- Link to go back to the list of all contracts -->
+    <a href="/all_contracts">Back to All Contracts</a>
+</form>
+</div>
+</body>
+</html>

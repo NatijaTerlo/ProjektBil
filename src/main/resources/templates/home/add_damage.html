@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Damage</title>
+    <style>/* Reset some default browser styles */
+    body, h1, h2, h3, p, ul, li, form, input, label, a {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    form > div {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="number"],
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"],
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    a:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+<h1>Add New Damage</h1>
+<form action="insert_damage" method="post">
+    <div>
+        <label for="damageId"> Damage ID:</label>
+        <input type="number" id="damageId" name="damageId" required>
+    </div>
+    <div>
+        <label for="contractId">Contract ID:</label>
+        <input type="number" id="contractId" name="contractId" required>
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" required>
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required>
+    </div>
+    <input type="submit" value="Add Damage"><br><br>
+    <a href="/all_damages">Back to All Damages</a>
+</form>
+</body>
+</html>

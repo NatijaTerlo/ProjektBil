@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Contracts</title>
+    <link rel="stylesheet" type="text/css" href="all_contracts.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #333;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .action-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .delete-button {
+            background-color: #f44336; /* Red */
+        }
+
+        .action-button:hover {
+            background-color: #45a049; /* Darker Green */
+        }
+
+        .add-contract-button {
+            background-color: #008CBA; /* Blue */
+        }
+
+        .back-button {
+            background-color: #808080; /* Gray */
+        }
+
+    </style>
+</head>
+<body>
+<h1>List of All Contracts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Contract ID</th><th>Customer ID</th><th>Car ID</th><th>Start Date</th><th>End Date</th><th>Total Price</th><th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contract : ${contracts}">
+        <td th:text="${contract.contractId}"></td>
+        <td th:text="${contract.customerId}"></td>
+        <td th:text="${contract.carId}"></td>
+        <td th:text="${contract.startDate}"></td>
+        <td th:text="${contract.endDate}"></td>
+        <td th:text="${contract.totalPrice}"></td>
+        <td>
+            <!-- Use form elements to perform update and delete actions -->
+            <form th:action="@{/delete_contract}" method="get" style="display:inline;">
+                <input type="hidden" th:value="${contract.contractId}" name="id">
+                <button type="submit" class="action-button delete-button">Delete</button>
+            </form>
+            <!--
+            <form th:action="@{/update_contract}" method="post" style="display:inline;">
+                <input type="hidden" th:value="${contract.contractId}" name="id">
+                <button type="submit" class="action-button">Update</button>
+            </form>
+            -->
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!-- Link to the form for adding a new contract -->
+<form action="/add_contract" method="get"><button type="submit">Add New Contract</button> </form>
+<form action="/user_overview" method="get"><button type="submit">Back To Service</button> </form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Damage</title>
+    <link rel="stylesheet" type="text/css" href="/style.css/style.css">
+</head>
+<body>
+<h1>Update Damage</h1>
+<form action="/damages/update" method="POST">
+
+    <div>
+        <label for="contractID">Contract ID:</label>
+        <input type="number" id="contractID" name="contractID" value="${damage.contractID}" required>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="${damage.description}" required>
+    </div>
+    <div>
+        <label for="cost">Cost:</label>
+        <input type="number" id="cost" name="cost" step="0.01" value="${damage.cost}" required>
+    </div>
+    <div>
+        <input type="submit" value="Update Damage">
+    </div>
+</form>
+</body>
+</html>

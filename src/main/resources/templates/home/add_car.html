@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Car</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Changed background color */
+        }
+
+        /* Page header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            overflow: auto; /* Clear float */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.5; /* Adjust line height for readability */
+        }
+
+        /* Form styles */
+        form {
+            margin: 20px auto;
+            width: 50%;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Link styles */
+        a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Add New Car</h1>
+</header>
+
+<form action="/insert_car" method="post">
+    <div>
+        <label for="brand">Brand:</label>
+        <select id="brand" name="brand">
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Audi">Audi</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Infiniti">Infiniti</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Kia">Kia</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Volvo">Volvo</option>
+            <option value="Skoda">Skoda</option>
+        </select>
+    </div>
+    <div>
+        <label for="model">Car Model:</label>
+        <select id="model" name="model">
+            <option value="Camry">Camry</option>
+            <option value="Accord">Accord</option>
+            <option value="Focus">Focus</option>
+            <option value="Altima">Altima</option>
+            <option value="C-Class">C-Class</option>
+            <option value="A4">A4</option>
+            <option value="500">500</option>
+            <option value="Cruze">Cruze</option>
+            <option value="QX80">QX80</option>
+            <option value="488 GTB">488 GTB</option>
+            <option value="F-Type">F-Type</option>
+            <option value="Optima">Optima</option>
+            <option value="Model S">Model S</option>
+            <option value="XC90">XC90</option>
+            <option value="Octavia">Octavia</option>
+        </select>
+    </div>
+    <div>
+        <label for="year">Car Year:</label>
+        <select id="year" name="year">
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+            <option value="2008">2008</option>
+            <option value="2007">2007</option>
+            <option value="2006">2006</option>
+            <option value="2005">2005</option>
+            <option value="2004">2004</option>
+            <option value="2003">2003</option>
+            <option value="2002">2002</option>
+            <option value="2001">2001</option>
+            <option value="2000">2000</option>
+        </select>
+    </div>
+    <div>
+        <label for="color">Car Color:</label>
+        <select id="color" name="color" required>
+            <option value="">Select Color</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+            <option value="pink">Pink</option>
+            <option value="yellow">Yellow</option>
+            <option value="violet">Violet</option>
+        </select>
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price" required>
+    </div>
+    <div>
+        <!-- Checkbox for availability -->
+        <div>
+            <label for="availability">Availability:</label>
+            <input type="checkbox" id="availability" name="availability">
+        </div>
+        <!-- Submit button -->
+        <input type="submit" value="Add Car"><br>
+
+        <!-- Link to go back to the list of all cars -->
+        <a href="/all_cars">Back to All Cars</a>
+    </div>
+</form>
+</body>
+
+</html>

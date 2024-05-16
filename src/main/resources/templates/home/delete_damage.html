@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<style>
+    .container {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    p {
+        color: #666;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #c82333;
+    }
+
+    a {
+        display: block;
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+<head>
+    <title>Delete Damage</title>
+    <link rel="stylesheet" type="text/css" href="/style.css/style.css">
+</head>
+<body>
+<div class="container">
+<h1>Delete Damage</h1>
+    <p>Are you sure you want to delete the damage with the following details?
+        <br>
+        <strong>Damage ID:</strong> <span th:text="${id}"></span>
+        <br>
+        <strong>Description:</strong> <span th:text="${description}"></span>
+    </p>
+
+<form action="/delete_damage" method="POST">
+    <div>
+    <input type="hidden" name="id" th:value="${id}">
+    <button type="submit">Delete</button>
+    </div>
+</form>
+<a href="/all_damages">Back To All damages</a>
+</div>
+</body>
+</html>

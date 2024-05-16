@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Cars</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Changed background color */
+        }
+
+        /* Page header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            overflow: auto; /* Clear float */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.5; /* Adjust line height for readability */
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #dedbdb;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #444;
+            text-decoration: none;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #faf8f8;
+            color: #333;
+        }
+
+        /* Exit link styles */
+        .exit-link {
+            color: #888;
+            text-decoration: none;
+            font-weight: bold;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .exit-link:hover {
+            text-decoration: underline;
+            color: #dcd7d7;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table header styles */
+        thead {
+            background-color: #333;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Table row styles */
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Button styles */
+        .action-button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #45a049;
+        }
+
+        .delete-button {
+            background-color: #b00707;
+        }
+
+        /* Form for adding a new car */
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: rgba(162, 14, 14, 0.97);
+        }
+
+    </style>
+</head>
+<body>
+<h1>List of All Cars</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Car ID</th><th>Brand</th><th>Model</th><th>Year</th><th>Color</th><th>Price</th><th>Availability</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.carId}"></td>
+        <td th:text="${car.brand}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.year}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.price}"></td>
+        <td th:text="${car.availability ? 'Yes' : 'No'}"></td>
+        <td>
+            <!-- Use form elements to perform update and delete actions -->
+            <form th:action="@{/delete_car}" method="get" style="display:inline;">
+                <input type="hidden" th:value="${car.carId}" name="id">
+
+                <button type="submit" class="action-button delete-button">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!-- Link to the form for adding a new car -->
+<form action="/add_car" method="get"><button type="submit">Add New Car</button> </form>
+<form action="/user_overview" method="get"><button type="submit">Back To Service</button> </form>
+</body>
+</html>

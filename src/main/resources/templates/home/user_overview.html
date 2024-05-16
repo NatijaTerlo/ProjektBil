@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/user_overview.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            overflow: auto; /* Clear float */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.5; /* Adjust line height for readability */
+        }
+
+        nav {
+            background-color: #dedbdb;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #444; /* Adjusted link color */
+            text-decoration: none;
+            padding: 10px;
+            margin-right: 10px; /* Add margin between navigation links */
+        }
+
+        nav a:hover {
+            background-color: #faf8f8;
+            color: #333; /* Adjusted hover link color */
+        }
+
+        .exit-link {
+            color: #888; /* Adjusted exit link color */
+            text-decoration: none;
+            font-weight: bold;
+            float: right; /* Float the exit link to the right */
+            margin-right: 20px; /* Add some margin for spacing */
+        }
+
+        .exit-link:hover {
+            text-decoration: underline;
+            color: #dcd7d7; /* Adjusted hover exit link color */
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- Header with title -->
+<header>
+    <img src="/images/Nissan.jpg" alt="Nissan">
+</header>
+<!-- Navigation links -->
+<nav>
+    <h1>Car Subscription Service</h1>
+    <a href="/all_contracts">Contracts</a>
+    <a href="/all_customers">Customers</a>
+    <a href="/all_cars">Cars</a>
+    <a href="/all_damages">Damages</a>
+    <a href="/all_payments">Payments</a>
+    <br>
+    <div>
+        <form action="/" method="get"></form>
+        <a href="/" class="exit-link">Exit</a>
+    </div>
+</nav>
+</body>
+</html>

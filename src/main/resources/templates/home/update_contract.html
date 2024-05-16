@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Contract</title>
+
+<link rel="stylesheet" type="text/css" href="/style.css/update_contract.css">
+</head>
+
+<table border="1">
+    <tr>
+        <th>Contract ID</th>
+        <th>Customer ID</th>
+        <th>Car ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Total Price</th>
+    </tr>
+    <tr>
+        <td th:text="${contract.id}"></td>
+        <td th:text="${contract.customerId}"></td>
+        <td th:text="${contract.carId}"></td>
+        <td th:text="${contract.startDate}"></td>
+        <td th:text="${contract.endDate}"></td>
+        <td th:text="${contract.totalPrice}"></td>
+    </tr>
+
+</table>
+
+<body>
+<h1>Update Contract</h1>
+<form action="/update_contract" method="post">
+    <br>
+    <label for="contractId">Contract ID:</label>
+    <input type="number" id="contractId" name="contractId" required>
+    <input type="submit" value="Enter">
+    </br>
+
+    <br>
+    <label for="customerId">Customer ID:</label>
+    <input type="number" id="customerId" name="customerId" required>
+    <input type="submit" value="Enter"></br>
+
+
+    <br>
+    <label for="carId">Car ID:</label>
+    <input type="number" id="carId" name="carId" required>
+    <input type="submit" value="Enter"></br>
+
+    <br>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate" value="" required></br>
+    </div>
+    <div>
+        <br>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required></br>
+    </div>
+    <div>
+        <br>
+        <label for="totalPrice"> Total Price</label>
+        <input type="number" step="0.01" id="totalPrice" name="totalPrice" required></br>
+    </div>
+    <div>
+        <input type="submit" value="Create">
+    </div>
+
+    <td>
+        <form action="/update_contract" method="post">
+            <input type="hidden" name="id" th:value="${customerId}">
+            <button type="submit">Update</button>
+        </form>
+    </td>
+
+</form>
+</body>
+</html>

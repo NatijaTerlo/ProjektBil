@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #da1212;
+            border-radius: 5px;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #24c5b3;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: #faf8f8;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="submit"]:active {
+            background-color: #3e8e41;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0f33e5; /* Red */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #f44336; /* Darker red */
+        }
+
+    </style>
+</head>
+
+    <body>
+<h1> Add Payment</h1>
+
+
+    <form action="/insert_payment" method="post">
+        <div>
+            <label for="paymentId">Payment ID:</label>
+            <input type="number" id="paymentId" name="paymentId" required>
+        </div>
+        <div>
+            <label for="contractId">Contract ID:</label>
+            <input type="text" id="contractId" name="contractId" required>
+        </div>
+        <div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+        </div>
+        <div>
+            <label for="paymentDate">Payment Date:</label>
+            <input type="date" id="paymentDate" name="paymentDate" required>
+        </div>
+        <div>
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="visa">Visa</option>
+                <option value="mastercard">MasterCard</option>
+                <option value="american_express">American Express</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Add Payment"><br><br>
+        <a href="/all_payments">Back To All Payments</a>
+
+
+
+    </form>
+</body>
+</html>

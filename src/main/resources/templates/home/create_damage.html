@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Damage</title>
+    <link rel="stylesheet" type="text/css" href="/style.css/style.css">
+</head>
+<body>
+<h1>Create New Damage</h1>
+<form action="/damages/create" method="POST">
+    <div>
+        <label for="contractID">Contract ID:</label>
+        <input type="number" id="contractID" name="contractID" required>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+    </div>
+    <div>
+        <label for="cost">Cost:</label>
+        <input type="number" id="cost" name="cost" step="0.01" required>
+    </div>
+    <div>
+        <input type="submit" value="Create Damage">
+    </div>
+</form>
+</body>
+</html>

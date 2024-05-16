@@ -1,0 +1,54 @@
+/* index.css */
+
+body {
+    font-family: Arial, sans-serif; /* Standard skrifttype */
+    background-color: #f0f0f0; /* Baggrundsfarve */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Overskriftsstilarter */
+h1 {
+    color: #333;
+}
+
+/* Form stilarter */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Label stilarter */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputfelter stilarter */
+input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit-knap stilarter */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

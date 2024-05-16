@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Insert Car</title>
+    <link rel="stylesheet" type="text/css" href="insert_car.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+<h1>Insert New Car</h1>
+<form th:action="@{/add_car}" method="post">
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required>
+    <br>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <br>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" required>
+    <br>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" required>
+    <br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required>
+    <br>
+
+    <label for="availability">Availability:</label>
+    <input type="checkbox" id="availability" name="availability" value="true">
+    <br>
+
+    <button type="submit">Insert</button>
+</form>
+</body>
+</html>

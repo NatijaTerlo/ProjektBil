@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Payment</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #da1212;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0f33e5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #001c91;
+        }
+
+        a[href="/all_payments"] {
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+<h1> Delete Payment</h1>
+    <p>Are you sure you want to delete the payment with the following details?
+        <br>
+        <strong>Payment ID:</strong> <span th:text="${id}"></span>
+        <br>
+        <strong>Payment Date:</strong> <span th:text="${paymentDate}"></span>
+        <br>
+        <strong>Contract ID:</strong> <span th:text="${contractId}"></span>
+    </p>
+
+<form action="/delete_payment" method="post">
+    <div>
+    <input type="hidden" name="id" th:value="${id}">
+    <button type="submit">Delete</button><br>
+        <a href="/all_payments">Cancel</a>
+    </div>
+</form>
+</div>
+</body>
+</html>
+
