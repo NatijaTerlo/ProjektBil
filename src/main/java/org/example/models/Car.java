@@ -8,9 +8,11 @@ public class Car {
     private String color;
     private double price;
     private boolean availability;
+    private boolean rented;
 
     public Car(){
     }
+
     public Car(int carId, String brand, String model, int year, String color, double price, boolean availability) {
         this.carId = carId;
         this.brand = brand;
@@ -19,9 +21,8 @@ public class Car {
         this.color = color;
         this.price = price;
         this.availability = availability;
+        this.rented = false;
     }
-
-
 
     public int getCarId() {
         return carId;
@@ -79,6 +80,14 @@ public class Car {
         this.availability = availability;
     }
 
+    public boolean isRented() {
+        return rented;
+    }
+
+    public void setRented(boolean rented) {
+        this.rented = rented;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -91,4 +100,6 @@ public class Car {
                 ", availability=" + availability +
                 '}';
     }
+
 }
+

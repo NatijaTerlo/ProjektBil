@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CarService {
@@ -47,6 +46,9 @@ public class CarService {
 
     public void deleteCarById(int id) {
         carRepository.deleteById(id);
+    }
+    public void rentedCar(Car car ){
+        car.setRented(true);
     }
 
 }

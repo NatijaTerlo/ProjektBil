@@ -150,11 +150,18 @@
                 <button type="submit" class="action-button delete-button">Delete</button>
             </form>
         </td>
+
     </tr>
     </tbody>
 </table>
 <!-- Link to the form for adding a new car -->
 <form action="/add_car" method="get"><button type="submit">Add New Car</button> </form>
+
+<!--<form th:action="@{/register_car}" method="post">
+    <input type="hidden" th:value="${car.carId}" name="id">
+    <button type="submit">Register Car</button>
+</form> -->
+
 <form action="/user_overview" method="get"><button type="submit">Back To Service</button> </form>
 </body>
 </html>
