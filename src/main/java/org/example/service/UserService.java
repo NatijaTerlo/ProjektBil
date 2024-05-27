@@ -17,6 +17,10 @@ public class UserService {
     }
 
     public User validateUser(String email, String password) {
-        return userRepository.validateUser(email, password);
+        User user = userRepository.validateUser(email, password);
+        if (user == null){
+            throw new RuntimeException("User not found or invalid credentials");
+        }
+        return user;
     }
 }

@@ -1,6 +1,7 @@
 package org.example.repository;
 import org.example.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -19,6 +20,10 @@ public class UserRepository {
     public User validateUser(String email, String password) {
         String query = "SELECT * FROM users WHERE email =? and password = ?;";
         RowMapper<User>rowMapper = new BeanPropertyRowMapper<>(User.class);
-        return jdbcTemplate.queryForObject(query, rowMapper, email, password);
+        try {
+            return jdbcTemplate.queryForObject(query, rowMapper, email, password);
+        } catch (EmptyResultDataAccessException e){
+            return null;
+        }
     }
 }
