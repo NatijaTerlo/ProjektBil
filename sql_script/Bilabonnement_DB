@@ -11,7 +11,7 @@ FirstName varchar(50),
 LastName varchar(50),
 Email varchar(70),
 Phone varchar(20),
-Adress varchar(100)
+Address varchar(100)
 );
 
 create table if not exists Cars (
@@ -24,15 +24,14 @@ Price decimal(10,2),
 Availability boolean
 );
 
-create table if not exists Contracts (
+drop table if exists Contracts;
+create table Contracts (
 ContractID int auto_increment primary key,
 CustomerID int,
 CarID int,
 StartDate date,
 EndDate date,
-TotalPrice decimal(10,2),
-foreign key (CustomerID) references Customers(CustomerID),
-foreign key (CarID) references Cars(CarID)
+TotalPrice decimal(10,2)
 );
 
 drop table if exists Damages;
@@ -40,8 +39,7 @@ create table Damages (
 DamageID int auto_increment primary key,
 ContractID int,
 Description varchar(150),
-Cost decimal(10,2),
-foreign key (ContractID) references Contracts(ContractID)
+Price decimal(10,2)
 );
 
 drop table if exists Payments;
@@ -50,8 +48,7 @@ PaymentID int auto_increment primary key,
 ContractID int,
 Amount decimal(10,2),
 PaymentDate date,
-PaymentMethod varchar(40),
-foreign key (ContractId) references Contracts(ContractID)
+PaymentMethod varchar(40)
 );
 
 insert into Customers (FirstName, LastName, Email, Phone, Adress)
@@ -70,5 +67,3 @@ insert into Payments (ContractID, Amount, PaymentDate, PaymentMethod)
 values (1, 2000.00, '2024-06-01', 'Credit Card');
 
 
-show databases;
-show tables;
